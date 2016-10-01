@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
     && ./configure --disable-docs \
     && make release \
 #    && make install \ - Gibt es nicht, stattdessen copy
-    && cp -r rel/couchdb /usr/local/lib
+    && cp -r rel/couchdb /usr/local/lib \
     && cd .. \
     && rm -rf apache-couchdb-* \
     && rm *.tar.gz \
