@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
     erlang \
     libicu-dev \
     libmozjs185-dev \
-    libcurl4-openssl-dev
+    libcurl4-openssl-dev \
+    wget
 
 RUN wget -nv https://github.com/apache/couchdb/archive/2.0.0.tar.gz \
     && tar -zxf 2.0.0.tar.gz \
