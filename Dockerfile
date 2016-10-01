@@ -9,14 +9,14 @@ RUN apt-get update && apt-get install -y \
     curl \
     erlang \
     libicu-dev \
-    libmozjs-dev \
+    libmozjs185-dev \
     libcurl4-openssl-dev
 
 RUN wget -nv https://github.com/apache/couchdb/archive/2.0.0.tar.gz \
     && tar -zxf 2.0.0.tar.gz \
     && cd couchdb-* \
     && ./configure \
-    && make \
+    && make release \
     && make install \
     && cd .. \
     && rm -rf couchdb-* \
