@@ -11,11 +11,11 @@ RUN apt-get update && apt-get install -y \
     libicu-dev \
     libmozjs185-dev \
     libcurl4-openssl-dev \
-    wget
+    git
 
-RUN wget -nv https://github.com/apache/couchdb/archive/2.0.0.tar.gz \
-    && tar -zxf 2.0.0.tar.gz \
-    && cd couchdb-* \
+RUN curl -J -L -o couchdb.tar.gz http://www-eu.apache.org/dist/couchdb/source/2.0.0/apache-couchdb-2.0.0.tar.gz \
+    && tar -zxf couchdb.tar.gz \
+    && cd apache-couchdb-* \
     && ./configure \
     && make release \
     && make install \
