@@ -8,9 +8,9 @@
 # distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations under
-# the License.FROM resin/armv7hf-debian-qemu
+# the License.
 
-FROM 
+FROM resin/armv7hf-debian-qemu
 
 MAINTAINER Jannis Schaefer <j.schaefer@estwx.de>
 
@@ -102,5 +102,3 @@ ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
 CMD ["/opt/couchdb/bin/couchdb"]
 
 RUN [ "cross-build-end" ]
-
-CMD [ "/usr/local/lib/couchdb/bin/couchdb"]
