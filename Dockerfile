@@ -8,6 +8,22 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     erlang \
+    erlang-base \
+    erlang-base-hipe \
+    erlang-crypto \
+    erlang-xmerl \
+    erlang-eunit \
+    erlang-inets \
+    erlang-os-mon \
+    erlang-public-key \
+    erlang-ssl \
+    erlang-syntax-tools \
+    erlang-tools \
+    libnspr4 \
+    libstdc++6 \
+    libc6 \
+    libjs-jquery \
+    libjs-underscore \
     libicu-dev \
     libmozjs185-dev \
     libcurl4-openssl-dev \
@@ -29,7 +45,6 @@ RUN apt-get update && apt-get install -y \
     erlang \
     erlang-dev \
     git \
-    libicu-dev \
     make && \
     apt-get autoremove -y && \
     apt-get clean && \
