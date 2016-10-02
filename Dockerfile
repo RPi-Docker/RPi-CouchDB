@@ -13,6 +13,8 @@
 FROM resin/armv7hf-debian-qemu
 
 MAINTAINER Jannis Schaefer <j.schaefer@estwx.de>
+# Based on https://github.com/klaemo/docker-couchdb/blob/master/2.0.0/Dockerfile
+# by Clemens Stolle klaemo@apache.org
 
 RUN [ "cross-build-start" ]
 
