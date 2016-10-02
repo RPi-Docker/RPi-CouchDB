@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
     curl \
     erlang \
     erlang-base \
-    erlang-base-hipe \
     erlang-crypto \
     erlang-xmerl \
     erlang-eunit \
