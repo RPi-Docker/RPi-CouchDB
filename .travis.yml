@@ -7,3 +7,9 @@ services:
 
 script:
   - docker build -t rpidocker/rpi-couchdb:latest .
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+      docker push rpidocker/rpi-couchdb;
+    fi
