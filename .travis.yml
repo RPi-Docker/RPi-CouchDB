@@ -6,7 +6,7 @@ services:
   - docker
 
 script:
-  - docker build -t rpidocker/rpi-couchdb:latest .
+  - docker build -t rpidocker/rpi-couchdb:latest -t rpidocker/rpi-couchdb:2.0.0 .
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then

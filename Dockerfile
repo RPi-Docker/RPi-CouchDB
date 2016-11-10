@@ -24,6 +24,7 @@ RUN groupadd -r couchdb && useradd -d /opt/couchdb -g couchdb couchdb
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
+    haproxy \
     erlang-nox \
     erlang-reltool \
     libicu52 \
@@ -39,10 +40,10 @@ RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364
   && rm /usr/local/bin/gosu.asc \
   && chmod +x /usr/local/bin/gosu \
   && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5 \
-  && curl -o /usr/local/bin/tini -fSL "https://github.com/ind3x/rpi-tini/releases/download/v0.10.0/tini" \
-  #&& curl -o /usr/local/bin/tini.asc -fSL "https://github.com/krallin/tini/releases/download/v0.9.0/tini.asc" \
-  #&& gpg --verify /usr/local/bin/tini.asc \
-  #&& rm /usr/local/bin/tini.asc \
+  && curl -o /usr/local/bin/tini -fSL "https://github.com/krallin/tini/releases/download/v0.13.0/tini-armhf" \
+  && curl -o /usr/local/bin/tini.asc -fSL "https://github.com/krallin/tini/releases/download/v0.13.0/tini-armhf.asc" \
+  && gpg --verify /usr/local/bin/tini.asc \
+  && rm /usr/local/bin/tini.asc \
   && chmod +x /usr/local/bin/tini
 
 ENV COUCHDB_VERSION 2.0.0
